@@ -22,20 +22,18 @@ uint64_t factorial(const uint16_t x) {  // Using uint64_t for larger numbers
 int main() {
     int n, k;
 
-    // Get and validate user input for n
+    // Get user input for n
     cout << "Enter n (>= 0): ";
     cin >> n;
-    if (n < 0) {
-        cout << -1 << endl;  // Invalid input, return -1
-        return 0;
-    }
 
-    // Get and validate user input for k
+    // Get user input for k
     cout << "Enter k (0 <= k <= n): ";
     cin >> k;
-    if (k < 0 || k > n) {
+
+    // Check for invalid input
+    if (n < 0 || k < 0 || k > n) {
         cout << -1 << endl;  // Invalid input, return -1
-        return 0;
+        return 0;            // Exit the program
     }
 
     // Calculate C(n,k) = n! / (k! * (n-k)!)
@@ -46,3 +44,4 @@ int main() {
 
     return 0;
 }
+
