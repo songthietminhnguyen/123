@@ -3,45 +3,46 @@
 using namespace std;
 
 /*
- * function to calculate factorial
+ * Function to calculate factorial of a number
  */
-uint16_t factorial(const uint16_t x) {
-    // for larger numbers
-    if (x==0 || x== 1) {
+uint64_t factorial(const uint16_t x) {  // Using uint64_t for larger numbers
+    if (x == 0 || x == 1) {
         return 1;
     }
     uint64_t result = 1;
-    for (uint16_t i=2; i <= x; i++) {
+    for (uint16_t i = 2; i <= x; i++) {
         result *= i;
     }
     return result;
 }
+
 /*
- * Main function to calculate C(n,k);
+ * Main function to calculate C(n,k)
  */
 int main() {
     int n, k;
 
-    // get and validate user input for n
-    cout << "Enter n: ";
+    // Get and validate user input for n
+    cout << "Enter n (>= 0): ";
     cin >> n;
-    while (n < 0) {
-        cout << "Invalid input. enter a number greater than or equalto 0:";
-        cin >> n;
+    if (n < 0) {
+        cout << -1 << endl;  // Invalid input, return -1
+        return 0;
     }
 
-    // get and validate user input for k
-    cout << "Enter k: ";
+    // Get and validate user input for k
+    cout << "Enter k (0 <= k <= n): ";
     cin >> k;
-    while (k < 0 || k > n) {
-        cout << "Invalid input. Enter a number between 0 and " << n << "; ";
-        cin >> k;
+    if (k < 0 || k > n) {
+        cout << -1 << endl;  // Invalid input, return -1
+        return 0;
     }
 
-    // calculate C(n,k) = n! / (k! * (n-k)!)
-    uint16_t c_n_k = factorial(n) / (factorial(k) * factorial(n - k));
+    // Calculate C(n,k) = n! / (k! * (n-k)!)
+    uint64_t c_n_k = factorial(n) / (factorial(k) * factorial(n - k));  // Using uint64_t
 
-    // write out results
+    // Write out the result
     cout << "C(" << n << ", " << k << ") = " << c_n_k << endl;
+
     return 0;
 }

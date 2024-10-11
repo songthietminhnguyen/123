@@ -1,3 +1,5 @@
 # ninja log v6
 2	223	7503096564743241	CMakeFiles/123.dir/combination/combination_example.cpp.obj	671f133089716fe6
 224	311	7503096566963237	123.exe	9f0fbe39f0c940a8
+4	223	7503111259449668	CMakeFiles/123.dir/combination/combination_example.cpp.obj	671f133089716fe6
+224	298	7503111261649656	123.exe	9f0fbe39f0c940a8
