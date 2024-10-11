@@ -3,9 +3,17 @@
 using namespace std;
 
 /*
- * *** STUDENTS SHOULD WRITE CODE FOR THIS FUNCTION ***
+ * function to calculate factorial
  */
-uint16_t factorial(const uint16_t x) { return x; }
+uint16_t factorial(const uint16_t x) { // for larger numbers
+    if (x==0 || x== 1) {
+        return 1;
+    }
+    uint64_t result = 1;
+    for (uint16_t i=2; i <= x; i++) {
+        result *= i;
+    }
+    return result;
 
 /*
  * *** STUDENTS SHOULD WRITE CODE FOR THIS FUNCTION ***
