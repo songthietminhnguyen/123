@@ -37,11 +37,11 @@ int main() {
         cout << "Invalid input. Enter a number between 0 and " << n << "; ";
         cin >> k;
     }
+
     // calculate C(n,k) = n! / (k! * (n-k)!)
-    uint16_t c_n_k = factorial(n);
+    uint16_t c_n_k = factorial(n) / (factorial(k) * factorial(n - k));
 
     // write out results
-    cout << "result = " << c_n_k << endl;
-
+    cout << "C(" << n << ", " << k << ") = " << c_n_k << endl;
     return 0;
 }
