@@ -5,7 +5,8 @@ using namespace std;
 /*
  * function to calculate factorial
  */
-uint16_t factorial(const uint16_t x) { // for larger numbers
+uint16_t factorial(const uint16_t x) {
+    // for larger numbers
     if (x==0 || x== 1) {
         return 1;
     }
@@ -14,16 +15,19 @@ uint16_t factorial(const uint16_t x) { // for larger numbers
         result *= i;
     }
     return result;
-
+}
 /*
- * *** STUDENTS SHOULD WRITE CODE FOR THIS FUNCTION ***
+ * Main function to calculate C(n,k);
  */
 int main() {
     int n;
 
-    // get and validate user input
+    // get and validate user input for n
     cout << "Enter n: ";
     cin >> n;
+    while (n < 0) {
+        cout << "Invalid input. enter a number greater than or equalto 0:";
+        cin >> n;
 
     // calculate C(n,k) = n! / (k! * (n-k)!)
     uint16_t c_n_k = factorial(n);
